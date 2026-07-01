@@ -23,20 +23,17 @@ export default function LeadForm() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbziwCEbswrPXTBIfn9zFFd7hpsgCd5hNltaDUp3nGiyEvXSOv106Ea7Yl5zkbc748TW/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      );
+      await fetch("/api/lead", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(form),
+});
 
       alert("Votre demande a été envoyée avec succès !");
 
@@ -50,7 +47,8 @@ export default function LeadForm() {
         ville: "",
         fumeur: "",
       });
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       alert("Erreur lors de l'envoi !");
     }
   };
@@ -127,10 +125,10 @@ export default function LeadForm() {
             required
           >
             <option value="">Profession</option>
-            <option>Salarié</option>
-            <option>Indépendant</option>
-            <option>Retraité</option>
-            <option>Étudiant</option>
+            <option value="Salarié">Salarié</option>
+            <option value="Indépendant">Indépendant</option>
+            <option value="Retraité">Retraité</option>
+            <option value="Étudiant">Étudiant</option>
           </select>
 
           <select
@@ -141,10 +139,10 @@ export default function LeadForm() {
             required
           >
             <option value="">Ville</option>
-            <option>Casablanca</option>
-            <option>Rabat</option>
-            <option>Marrakech</option>
-            <option>Tanger</option>
+            <option value="Casablanca">Casablanca</option>
+            <option value="Rabat">Rabat</option>
+            <option value="Marrakech">Marrakech</option>
+            <option value="Tanger">Tanger</option>
           </select>
 
           <select
@@ -155,8 +153,8 @@ export default function LeadForm() {
             required
           >
             <option value="">Fumeur ?</option>
-            <option>Oui</option>
-            <option>Non</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
           </select>
 
           <button
