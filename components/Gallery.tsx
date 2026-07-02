@@ -40,7 +40,7 @@ export default function Gallery() {
               <div className="flex gap-4">
 
                 <div className="text-4xl">
-                  ✅
+                  
                 </div>
 
                 <div>
@@ -60,7 +60,7 @@ export default function Gallery() {
               <div className="flex gap-4">
 
                 <div className="text-4xl">
-                  ⚡
+                  
                 </div>
 
                 <div>
@@ -80,7 +80,7 @@ export default function Gallery() {
               <div className="flex gap-4">
 
                 <div className="text-4xl">
-                  🛡️
+                  
                 </div>
 
                 <div>
