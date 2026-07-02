@@ -32,8 +32,11 @@ export default function MapLeaflet() {
     <MapContainer
       center={[46.603354, 1.888334]}
       zoom={6}
-      scrollWheelZoom={true}
-      style={{ height: "600px", width: "100%" }}
+      scrollWheelZoom={false}
+      style={{
+  height: "450px",
+  width: "100%",
+}}
     >
       <TileLayer
         attribution="© OpenStreetMap"

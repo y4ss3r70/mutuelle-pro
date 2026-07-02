@@ -19,9 +19,12 @@ export default function FranceMap() {
           Sélectionnez votre région ou votre ville afin de découvrir les meilleures offres disponibles.
         </p>
 
-        <div className="rounded-3xl overflow-hidden shadow-2xl">
-          <Map />
-        </div>
+        <div
+  className="rounded-3xl overflow-hidden shadow-2xl"
+  style={{ height: "450px" }}
+>
+  <Map />
+</div>
 
       </div>
     </section>
